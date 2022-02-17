@@ -51,11 +51,9 @@ a {
 }
 
 .card {
-  border-radius: 10px;
   margin-top: 88px;
   margin-bottom: 88px;
   max-width: 325px;
-  overflow: hidden;
 }
 
 .card__description {
@@ -63,11 +61,13 @@ a {
   padding: 3.3em;
   display: flex;
   flex-direction: column;
-  gap: 2.6em;
+  gap: 2.2em;
 }
 
 .col--one {
   background-color: var(--primary-orange);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .col--two {
@@ -76,6 +76,8 @@ a {
 
 .col--three {
   background-color: var(--primary-dark);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .btn {
@@ -130,6 +132,7 @@ a {
 .main--text {
   color: var(--white-transparent);
   font-weight: 400;
+  line-height: 1.5;
 }
 
 .btn--orange {
@@ -154,29 +157,35 @@ a {
   .viewport {
     display: block;
     position: relative;
+    height: 100vh;
     width: 100vw;
   }
 
   .card {
+    border-radius: 10px;
     display: grid;
-    grid-template-columns: repeat(3, 306px);
+    grid-template-rows: none;
+    grid-template-columns: repeat(3, 1fr);
     height: 500px;
-    max-width: 920px;
+    min-width: 920px;
     margin: unset;
     padding: unset;
     position: absolute;
     top: 50%;
     left: 50%;
+    overflow: hidden;
     transform: translate(-50%, -50%);
   }
 
-  .card__description {
-    max-height: 500px;
-    padding: 50px;
+  .col--one,
+  .col--three {
+    border-radius: unset;
   }
 
-  .main--text {
-    line-height: 1.5;
+  .card__description {
+    gap: 2.2em;
+    max-height: 500px;
+    padding: 50px;
   }
 
   .btn {
